@@ -2,6 +2,19 @@
 
 ## create a data frame of your installed packages
 
+library(tidyverse)
+library(here)
+
+#' Installed packages
+
+## use installed.packages() to get all installed packages
+
+all.pack<- installed.packages() %>%
+  as.tibble() %>%
+  select(Package, LibPath, Version, Priority, Built)
+
+write_csv(all.pack, "installed-packages.csv" )
+
 ## keep the variables
 ##   * Package
 ##   * LibPath

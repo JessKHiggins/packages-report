@@ -13,7 +13,7 @@ all.pack<- installed.packages() %>%
   as.tibble() %>%
   select(Package, LibPath, Version, Priority, Built)
 
-write_csv(all.pack, "installed-packages.csv" )
+write_csv(all.pack, here("data", "installed-packages.csv" ))
 
 ## keep the variables
 ##   * Package
